@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'OptimaLTStd';
+    src: url('fonts/OptimaLTStd.eot');
+    src: url('fonts/OptimaLTStd.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OptimaLTStd.woff') format('woff'),
+         url('fonts/OptimaLTStd.ttf') format('truetype'),
+         url('fonts/OptimaLTStd.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+  font-family: 'OptimaLTStd';	
+}
+
+#fondo{
+position: absolute;
+left:0%;
+top:0%;
+width: 100%;
+height: 100%;
+z-index: 1;
+
+}
+
+#consigna{
+position: absolute;
+left: 3%;
+top: 13%;
+width: 80%;
+height: 20%;
+z-index: 2;
+
+}
+.cajas{
+position: absolute;
+background-color: aqua;
+background: #1C55A1;
+text-align: center;
+z-index: 5;
+width: 12%;
+height: 6%;
+
+cursor: pointer;
+-moz-border-radius: 15px 15px 15px 15px;
+-webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080; 
+ }
+ 

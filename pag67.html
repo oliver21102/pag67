@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+		 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/estiloPlantilla.css">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ <style type="text/css">
+
+  .tabla tr{
+ height: 50;
+ border-radius: 55px;
+}
+
+
+ 
+.tabla {
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+  width: auto;
+  position: absolute;
+  z-index: 10;
+}
+.tabla th {
+  background-color: #73AEDF;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  border-radius: 6%;
+  box-shadow: 2px 2px #0C4D83;
+}
+.tabla td {
+  background-color: #eeeeee;
+  color: #000000;
+border-radius: 6%;
+box-shadow: 2px 2px #0C4D83;
+text-align: center;
+font-weight: normal;
+}
+
+
+.cajas2{
+position: absolute;
+display: inline-block;
+background-color: aqua;
+ 
+background: #2a6e7a; z-index: 2; width: 12%; height: 10%; cursor: pointer;
+text-align: center; font-weight: normal; /*padding-top: 0.5%;*/ -moz-border-
+radius: 15px 15px 15px 15px; -webkit-border-radius: 15px 15px 15px 15px;
+border-radius: 15px 15px 15px 15px;
+
+box-shadow: 1px 5px 8px #828080; 
+-webkit-border-radius: 7px;
+-moz-box-shadow: 1px 5px 8px #828080; 
+color:#fff;
+ 
+}
+
+.subindice{
+vertical-align: sub;
+}
+
+.superindice{
+vertical-align: super;	
+}
+
+.noseleccionable{
+
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+
+}
+
+ </style>
+</head>
+<body   onload="inicio()" onresize="ajustar()" class="noseleccionable">
+
+
+
+<img src="imagenes/fondo.png" id="fondo" class="noseleccionable">
+<label  id="consigna" class="noseleccionable">Arrastra los siguientes elementos y completa la tabla. </label>
+
+<div  id="a1"class="cajas2" alt="0" ><div style="margin-top:15%;" >2BaO</div></div>
+<div  id="a2"class="cajas2" alt="1"><div style="margin-top:15%;">2Na + O<span class="subindice">2</span></div></div>
+
+<div  id="a4"class="cajas2" alt="2"><div style="margin-top:15%;">K + O<span class="subindice">2</span></div></div>
+<div  id="a5"class="cajas2" alt="3"> <div style="margin-top:15%;">N<span class="subindice">2</span>O<span class="subindice">5</span></div></div>
+<div  id="a7"class="cajas2" alt="4"><div style="margin-top:15%;">S<span class="subindice">2</span> + O<span class="subindice">2</span></div></div>
+<div  id="a9"class="cajas2" alt="r" style="line-height:100%"><div style="margin-top:9%;">óxido sulfúrico</div></div>
+<div  id="a10"class="cajas2" alt="6" > <div style="margin-top:15%;" >C + O<span class="subindice">2</span></div></div>
+
+<div  id="a3"class="cajas2"  alt="r" style="line-height:100%;"> <div style="margin-top:9%;">óxido de sodio</div></div>
+<div  id="a6"class="cajas2"  alt="r" style="line-height:100%"> <div style="margin-top:9%;">óxido nítrico</div></div>
+<div  id="a8" class="cajas2" alt="9" ><div style="margin-top:15%;">SO<span class="subindice">2</span></div></div>
+
+<table class="tabla noseleccionable">
+  <tbody>
+    <tr>
+      <th class="cabecera">Ecuación balanceada</th>
+      <th class="cabecera">Fórmula</th>
+      <th class="cabecera">Nombre</th>
+       
+       
+    </tr>
+    <tr>
+      
+      <td  >2Ba + O<span class="subindice ">2</span>  </td>
+      <td id="n1"></td>
+      <td >óxido de bario</td>
+     
+    </tr>
+    <tr>
+  
+      <td id="n2"></td>
+      <td >Na<span class="subindice">2</span>O</td>
+      <td id="n3"> </td>
+       
+    </tr>
+
+     <tr>
+      
+      <td id="n4"></td>
+      <td >K<span class="subindice">2</span>O</td>
+      <td >óxido de potasio</td>
+    
+    </tr>
+
+     <tr>
+   
+      <td  >N<span class="subindice">2</span> + O2</td>
+      <td id="n5"></td>
+      <td id="n6"></td>
+ 
+    </tr>
+
+     <tr>
+     
+      <td id="n7"></td>
+      <td id="n8"></td>
+      <td >óxido sulfuroso</td>
+   
+    </tr>
+    <tr>
+     
+      <td>S<span class="subindice">2</span> + O<span class="subindice">2</span></td>
+      <td>SO<span class="subindice">3</span></td>
+      <td id="n9"> </td>
+   
+    </tr>
+    <tr>
+     
+      <td id="n10"></td>
+      <td>CO<span class="subindice">2</span></td>
+      <td>óxido carbónico</td>
+   
+    </tr>
+      </tbody>
+
+  </table>
+
+
+
+<script type="text/javascript">
+
+  function inicio(){
+  ajustar();
+  sonidoFondo();
+  }
+
+  function ajustar(){
+  var alto=$(window).height();
+  var ancho=$(window).width();
+     ancho=(ancho+alto)/2;
+   var tamanio= ancho/45;
+   
+    
+    var vcabecera=document.getElementsByClassName("cabecera");
+   
+  $("#consigna").css("fontSize",""+(tamanio*1.6)+"px");
+   var vcajas=document.getElementsByClassName("cajas2");
+  var vtd=document.getElementsByTagName("td");
+ var vDiv=document.getElementsByTagName("div");
+ var  vspan= document.getElementsByTagName("span");
+
+  for(var j=0; j<vspan.length; j++){
+       vspan[j].style.fontSize=""+(tamanio*0.5)+"pt";    
+  } 
+
+var kk=33;
+var mitad=vcajas.length/2;
+   for(var h=0; h<vcajas.length; h++){
+     vcajas[h].style.fontSize=""+(tamanio)+"pt";
+     if( h<mitad){
+   	    vcajas[h].style.left="5%";
+   	    vcajas[h].style.top=""+kk+"%";
+       }else{
+         if(h==mitad){ kk=33;}
+         vcajas[h].style.left="20"+"%";
+        vcajas[h].style.top=""+kk+"%";
+       }
+       kk+=11;
+   	   $("#"+vcajas[h].id).draggable({containment: "window",revert:true,drag:arrastrar});
+      $("#n"+(h+1)+"").droppable( {accept:"#a"+(h+1)+"",drop:soltar});
+   }
+
+
+for(var r=0; r<vtd.length; r++){
+  vtd[r].style.fontSize=(tamanio*1.3)+"px";
+}
+    
+  /*
+    for(var r1=0; r1<vDiv.length; r1++){
+      console.log(vDiv[r1].alt);
+        if(vDiv[r1].alt=="letras"){
+          vDiv[r1].style.lineHeight=""+(tamanio)+"px";
+        }
+
+    } */  
+
+    for(var k=0; k<vcabecera.length; k++){
+      vcabecera[k].style.fontSize=(tamanio)+"px";
+    }
+
+    
+    
+
+    $(".tabla").css("left","35%");
+    $(".tabla").css("top","30%");
+
+    $(".tabla tbody tr th").css("width",""+tamanio*10+"px");
+    $(".tabla tbody tr th").css("height",""+tamanio*2+"px");
+
+    $(".tabla tbody tr td").css("height",""+tamanio*2+"px");
+    $(".tabla tbody tr td").css("width",""+tamanio*10+"px");
+
+
+    
+
+  }
+
+
+function sonidoFondo(){
+  var audio = document.createElement("audio");
+ 
+    audio.src = "sonido/sonidoF.mp3";
+    audio.play();
+}
+
+
+</script>
+ <script type="text/javascript" src="js/OZGFunciones2.js"></script>
+</body>
+</html>
